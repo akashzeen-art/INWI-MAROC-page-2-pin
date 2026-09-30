@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Play 365 Game – Confirmation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="phone-shell">
+
+    <div class="bg-image" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+
+    <div class="phone-scroll">
+
+      <main class="screen">
+
+        <div class="top-badge">
+          <img src="logo.png" alt="Play 365 Game" class="badge-logo" />
+        </div>
+
+        <div class="card">
+          <span class="corner tl" aria-hidden="true"></span>
+          <span class="corner tr" aria-hidden="true"></span>
+          <span class="corner bl" aria-hidden="true"></span>
+          <span class="corner br" aria-hidden="true"></span>
+
+          <h1 class="main-heading">Profitez en<br><span>maintenant !</span></h1>
+
+          <div class="divider" aria-hidden="true">
+            <span class="div-line"></span>
+            <span class="div-icon">◆</span>
+            <span class="div-line"></span>
+          </div>
+
+          <p class="description">Cliquez sur le bouton ci-dessous<br>pour commencer;<br>Abonnement sans engagement</p>
+
+          <button type="button" class="btn-confirm" id="btn-he-confirm">
+            <span class="btn-text">CONFIRMER</span>
+            <span class="btn-spinner" id="btnSpinner" aria-hidden="true"></span>
+          </button>
+
+          <p class="error-message" id="err-he" hidden></p>
+
+          <a href="#tnc" class="tnc-link">Termes &amp; Conditions</a>
+        </div>
+
+      </main>
+
+      <section class="tnc-section" id="tnc">
+        <h3 class="tnc-title">Termes &amp; Conditions</h3>
+        <ul class="tnc-list">
+          <li>Play365Game est un portail de jeux HTML5 proposant une large variété de jeux amusants et engageants, accessibles instantanément sur tout appareil.</li>
+          <li>Le prix de ce service est de 6 MAD par jour. L'abonnement se renouvelle automatiquement sauf résiliation.</li>
+          <li>Pour se désabonner, l'utilisateur doit envoyer STOP au 7012.</li>
+          <li>Pour utiliser ce service, vous devez avoir plus de 18 ans ou avoir l'autorisation de vos parents ou de la personne habilitée à payer votre facture mobile.</li>
+        </ul>
+      </section>
+
+    </div><!-- /phone-scroll -->
+
+    <div class="toast" id="errorToast" role="alert" aria-live="assertive" hidden>
+      <p class="toast-message" id="toastMessage"></p>
+    </div>
+
+  </div><!-- /phone-shell -->
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      var url = new URL(window.location.href);
+      if (!url.searchParams.get("flow")) {
+        url.searchParams.set("flow", "he");
+        window.history.replaceState({}, "", url.toString());
+      }
+    })();
+  </script>
+</body>
+</html>
