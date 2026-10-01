@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -19,6 +19,15 @@
     <div class="orb orb-2" aria-hidden="true"></div>
     <div class="orb orb-3" aria-hidden="true"></div>
 
+    <!-- Language dropdown -->
+    <div class="lang-wrapper">
+      <button class="lang-drop-btn" id="langDropBtn">AR ▾</button>
+      <div class="lang-menu" id="langMenu">
+        <button class="lang-option active" data-lang="ar">العربية</button>
+        <button class="lang-option" data-lang="fr">Français</button>
+      </div>
+    </div>
+
     <div class="phone-scroll">
 
       <main class="screen">
@@ -33,7 +42,10 @@
           <span class="corner bl" aria-hidden="true"></span>
           <span class="corner br" aria-hidden="true"></span>
 
-          <h1 class="main-heading">Profitez en<br><span>maintenant !</span></h1>
+          <h1 class="main-heading">
+            <span data-i18n="heading-he2-line1">استمتع الآن</span><br>
+            <span class="heading-accent" data-i18n="heading-he2-span">الآن !</span>
+          </h1>
 
           <div class="divider" aria-hidden="true">
             <span class="div-line"></span>
@@ -41,27 +53,28 @@
             <span class="div-line"></span>
           </div>
 
-          <p class="description">Cliquez sur le bouton ci-dessous<br>pour commencer;<br>Abonnement sans engagement</p>
+          <p class="description" data-i18n="desc-he2">انقر على الزر أدناه للبدء؛<br>اشتراك بدون التزام</p>
 
           <button type="button" class="btn-confirm" id="btn-he-confirm">
-            <span class="btn-text">CONFIRMER</span>
+            <span class="btn-text" data-i18n="btn-confirm">تأكيد</span>
             <span class="btn-spinner" id="btnSpinner" aria-hidden="true"></span>
           </button>
 
           <p class="error-message" id="err-he" hidden></p>
 
-          <a href="#tnc" class="tnc-link">Termes &amp; Conditions</a>
+          <a href="#tnc" class="tnc-link" data-i18n="tnc-link"
+             onclick="event.preventDefault(); document.getElementById('tnc').scrollIntoView({behavior:'smooth'})">الشروط والأحكام</a>
         </div>
 
       </main>
 
       <section class="tnc-section" id="tnc">
-        <h3 class="tnc-title">Termes &amp; Conditions</h3>
+        <h3 class="tnc-title" data-i18n="tnc-title">الشروط والأحكام</h3>
         <ul class="tnc-list">
-          <li>Play365Game est un portail de jeux HTML5 proposant une large variété de jeux amusants et engageants, accessibles instantanément sur tout appareil.</li>
-          <li>Le prix de ce service est de 7.5 MAD par jour. L'abonnement se renouvelle automatiquement sauf résiliation.</li>
-          <li>Pour se désabonner, l'utilisateur doit envoyer STOP au 7012.</li>
-          <li>Pour utiliser ce service, vous devez avoir plus de 18 ans ou avoir l'autorisation de vos parents ou de la personne habilitée à payer votre facture mobile.</li>
+          <li data-i18n="tnc-1">Play365Game هو بوابة ألعاب HTML5 تقدم مجموعة واسعة من الألعاب الممتعة والسريعة، يمكن الوصول إليها فوراً على أي جهاز.</li>
+          <li data-i18n="tnc-2">سعر هذه الخدمة 7.5 درهم في اليوم. يتجدد الاشتراك تلقائياً ما لم يتم إلغاؤه.</li>
+          <li data-i18n="tnc-3">لإلغاء الاشتراك، يجب على المستخدم إرسال STOP إلى 7012.</li>
+          <li data-i18n="tnc-4">لاستخدام هذه الخدمة، يجب أن يكون عمرك أكثر من 18 عاماً أو الحصول على إذن من والديك أو الشخص المخوّل بدفع فاتورة هاتفك.</li>
         </ul>
       </section>
 
@@ -74,6 +87,7 @@
   </div><!-- /phone-shell -->
 
   <script src="script.js"></script>
+  <script src="lang.js"></script>
   <script>
     (function () {
       var url = new URL(window.location.href);
